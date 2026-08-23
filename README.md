@@ -1,10 +1,10 @@
 # webgrab
 
-![webgrab](https://raw.githubusercontent.com/dotbrains/webgrab/main/assets/og-image.svg)
+![webgrab](https://raw.githubusercontent.com/smeltery/webgrab/main/assets/og-image.svg)
 
-[![Tests](https://github.com/dotbrains/webgrab/actions/workflows/tests.yml/badge.svg)](https://github.com/dotbrains/webgrab/actions/workflows/tests.yml)
-[![Lint](https://github.com/dotbrains/webgrab/actions/workflows/lint.yml/badge.svg)](https://github.com/dotbrains/webgrab/actions/workflows/lint.yml)
-[![Coverage](https://img.shields.io/badge/coverage-80%20tests-brightgreen.svg)](https://github.com/dotbrains/webgrab)
+[![Tests](https://github.com/smeltery/webgrab/actions/workflows/tests.yml/badge.svg)](https://github.com/smeltery/webgrab/actions/workflows/tests.yml)
+[![Lint](https://github.com/smeltery/webgrab/actions/workflows/lint.yml/badge.svg)](https://github.com/smeltery/webgrab/actions/workflows/lint.yml)
+[![Coverage](https://img.shields.io/badge/coverage-80%20tests-brightgreen.svg)](https://github.com/smeltery/webgrab)
 [![License: PolyForm Shield 1.0.0](https://img.shields.io/badge/License-PolyForm%20Shield%201.0.0-blue.svg)](https://polyformproject.org/licenses/shield/1.0.0/)
 
 ![Python](https://img.shields.io/badge/-Python-3776AB?style=flat-square&logo=python&logoColor=white)
@@ -19,7 +19,7 @@ A modern, well-architected Python CLI tool that captures all resources loaded by
 
 ```bash
 # Clone the repository
-git clone https://github.com/dotbrains/webgrab.git
+git clone https://github.com/smeltery/webgrab.git
 cd webgrab
 
 # Create and activate virtual environment
@@ -169,7 +169,7 @@ webgrab/
 
 ```bash
 # Clone and setup
-git clone https://github.com/dotbrains/webgrab.git
+git clone https://github.com/smeltery/webgrab.git
 cd webgrab
 
 # Create virtual environment

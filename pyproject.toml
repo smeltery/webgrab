@@ -42,9 +42,9 @@ dev = [
 webgrab = "webgrab.cli:main"
 
 [project.urls]
-Homepage = "https://github.com/dotbrains/webgrab"
-Repository = "https://github.com/dotbrains/webgrab"
-Issues = "https://github.com/dotbrains/webgrab/issues"
+Homepage = "https://github.com/smeltery/webgrab"
+Repository = "https://github.com/smeltery/webgrab"
+Issues = "https://github.com/smeltery/webgrab/issues"
 
 [tool.hatch.build.targets.wheel]
 packages = ["src/webgrab"]
