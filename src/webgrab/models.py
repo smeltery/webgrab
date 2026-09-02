@@ -2,7 +2,6 @@
 
 from dataclasses import dataclass, field
 from pathlib import Path
-from typing import Optional
 
 
 @dataclass(frozen=True)
@@ -28,7 +27,7 @@ class CaptureConfig:
     url: str
     wait_time: int = 0
     timeout: int = 60000
-    user_agent: Optional[str] = None
+    user_agent: str | None = None
     include_external: bool = False
     headless: bool = True
     bypass_csp: bool = True

@@ -41,10 +41,7 @@ class DefaultFilter:
             return False
 
         # Skip data URLs, blob URLs, etc.
-        if should_skip_url(url):
-            return False
-
-        return True
+        return not should_skip_url(url)
 
 
 class CompositeFilter:

@@ -2,6 +2,7 @@
 
 from pathlib import Path
 
+from ..errors import StorageError
 from ..mime.detector import infer_extension
 from ..models import Resource, SaveConfig, SaveResult
 from ..url.parser import is_same_origin
@@ -30,6 +31,11 @@ class ResourceSaver:
 
         Returns:
             Path where resource was saved, or None if skipped.
+
+        Raises:
+            StorageError: If writing the resource fails.
+            OSError: If path resolution or filesystem operations fail.
+            ValueError: If URL or path inputs are invalid.
         """
         # Filter external resources if not included
         if not self.config.include_external and not is_same_origin(
@@ -48,13 +54,8 @@ class ResourceSaver:
         # Deduplicate if path already used
         local_path = self.deduplicator.get_unique_path(local_path)
 
-        # Write content
-        try:
-            write_file(local_path, resource.body)
-            return local_path
-        except Exception:
-            # Return None to indicate failure (caller will track this)
-            return None
+        write_file(local_path, resource.body)
+        return local_path
 
     def save_resources(self, resources: list[Resource]) -> SaveResult:
         """Save all resources to disk.
@@ -74,7 +75,7 @@ class ResourceSaver:
                     result.saved_paths.append(saved_path)
                 else:
                     result.skipped_count += 1
-            except Exception as e:
+            except (StorageError, OSError, ValueError) as e:
                 result.failed_saves.append((resource.url, e))
 
         return result

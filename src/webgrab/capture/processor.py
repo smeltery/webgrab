@@ -1,8 +1,9 @@
 """Resource processing with streaming architecture."""
 
 import asyncio
-from typing import AsyncIterator, Callable
+from collections.abc import AsyncIterator, Callable
 
+from playwright.async_api import Error as PlaywrightError
 from playwright.async_api import Response
 
 from ..models import CaptureStats, Resource
@@ -62,7 +63,7 @@ class ResourceProcessor:
                 headers=headers,
                 status_code=status,
             )
-        except Exception as e:
+        except PlaywrightError as e:
             self.stats.failed_captures += 1
             if self.on_progress:
                 self.on_progress(f"Failed to capture {url}: {e}")
