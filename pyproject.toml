@@ -49,6 +49,9 @@ Issues = "https://github.com/smeltery/webgrab/issues"
 [tool.hatch.build.targets.wheel]
 packages = ["src/webgrab"]
 
+[tool.ruff.lint.flake8-bugbear]
+extend-immutable-calls = ["typer.Argument", "typer.Option"]
+
 [tool.pytest.ini_options]
 testpaths = ["tests"]
 python_files = ["test_*.py"]

@@ -4,25 +4,17 @@
 class WebGrabError(Exception):
     """Base exception for all webgrab errors."""
 
-    pass
-
 
 class CaptureError(WebGrabError):
     """Base exception for capture-related errors."""
-
-    pass
 
 
 class BrowserError(CaptureError):
     """Exception raised for browser-related errors."""
 
-    pass
-
 
 class NavigationError(BrowserError):
     """Exception raised when page navigation fails."""
-
-    pass
 
 
 class ResourceError(CaptureError):
@@ -44,13 +36,9 @@ class ResourceError(CaptureError):
 class StorageError(WebGrabError):
     """Base exception for storage-related errors."""
 
-    pass
-
 
 class PathResolutionError(StorageError):
     """Exception raised when URL to path resolution fails."""
-
-    pass
 
 
 class FileWriteError(StorageError):
@@ -71,5 +59,3 @@ class FileWriteError(StorageError):
 
 class ConfigurationError(WebGrabError):
     """Exception raised for configuration errors."""
-
-    pass

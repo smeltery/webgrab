@@ -1,9 +1,16 @@
 """Low-level Playwright browser operations."""
 
 import asyncio
-from typing import Callable
+from collections.abc import Callable
+from typing import Self
 
-from playwright.async_api import Browser, BrowserContext, Page, Response, async_playwright
+from playwright.async_api import (
+    Browser,
+    BrowserContext,
+    Page,
+    Response,
+    async_playwright,
+)
 
 from ..errors import BrowserError, NavigationError
 from ..models import CaptureConfig
@@ -23,7 +30,7 @@ class BrowserManager:
         self.context: BrowserContext | None = None
         self.page: Page | None = None
 
-    async def __aenter__(self) -> "BrowserManager":
+    async def __aenter__(self) -> Self:
         """Launch browser and create context."""
         try:
             self.playwright = await async_playwright().start()

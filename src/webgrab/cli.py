@@ -2,7 +2,6 @@
 
 import asyncio
 from pathlib import Path
-from typing import Optional
 
 import typer
 from rich.console import Console
@@ -34,7 +33,7 @@ def capture(
         ...,
         help="URL of the webpage to capture resources from.",
     ),
-    output: Optional[Path] = typer.Option(
+    output: Path | None = typer.Option(
         None,
         "--output", "-o",
         help="Output directory for saved resources. Defaults to ./webgrab_output",

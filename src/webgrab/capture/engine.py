@@ -2,7 +2,7 @@
 
 import asyncio
 import time
-from typing import Callable
+from collections.abc import Callable
 
 from playwright.async_api import Response
 
